@@ -23,6 +23,7 @@
 		AD638FFE29ED721C00DEBEFC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FFD29ED721C00DEBEFC /* DatabaseManager.swift */; };
 		AD63900029ED722A00DEBEFC /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FFF29ED722A00DEBEFC /* AuthManager.swift */; };
 		AD63900229ED724100DEBEFC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD63900129ED724100DEBEFC /* StorageManager.swift */; };
+		ADEAB54929F01FA500F6BB9F /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		AD638FFD29ED721C00DEBEFC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AD638FFF29ED722A00DEBEFC /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		AD63900129ED724100DEBEFC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-3.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,6 @@
 				9424816F20BCC4243958BB9B /* Pods-BloggingApp.debug.xcconfig */,
 				ACCE184585177F983239ECD0 /* Pods-BloggingApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -159,6 +160,7 @@
 			children = (
 				AD12C83E29ED676C0060AAA4 /* AppDelegate.swift */,
 				AD12C84029ED676C0060AAA4 /* SceneDelegate.swift */,
+				ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */,
 				AD12C84729ED676D0060AAA4 /* Assets.xcassets */,
 			);
 			path = Others;
@@ -244,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD12C84B29ED676D0060AAA4 /* LaunchScreen.storyboard in Resources */,
+				ADEAB54929F01FA500F6BB9F /* GoogleService-Info-3.plist in Resources */,
 				AD12C84829ED676D0060AAA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
