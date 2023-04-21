@@ -13,6 +13,9 @@
 		AD12C84329ED676C0060AAA4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD12C84229ED676C0060AAA4 /* HomeViewController.swift */; };
 		AD12C84829ED676D0060AAA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD12C84729ED676D0060AAA4 /* Assets.xcassets */; };
 		AD12C84B29ED676D0060AAA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD12C84929ED676D0060AAA4 /* LaunchScreen.storyboard */; };
+		AD42C56129F13AEC0009CB54 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42C56029F13AEC0009CB54 /* User.swift */; };
+		AD42C56329F13AFF0009CB54 /* BlogPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42C56229F13AFF0009CB54 /* BlogPost.swift */; };
+		AD42C56529F187390009CB54 /* PayWallViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD42C56429F187390009CB54 /* PayWallViewController.swift */; };
 		AD638FEF29ED707F00DEBEFC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FEE29ED707F00DEBEFC /* ProfileViewController.swift */; };
 		AD638FF229ED712800DEBEFC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FF129ED712800DEBEFC /* TabBarViewController.swift */; };
 		AD638FF429ED714E00DEBEFC /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FF329ED714E00DEBEFC /* SignInViewController.swift */; };
@@ -23,7 +26,10 @@
 		AD638FFE29ED721C00DEBEFC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FFD29ED721C00DEBEFC /* DatabaseManager.swift */; };
 		AD63900029ED722A00DEBEFC /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD638FFF29ED722A00DEBEFC /* AuthManager.swift */; };
 		AD63900229ED724100DEBEFC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD63900129ED724100DEBEFC /* StorageManager.swift */; };
-		ADEAB54929F01FA500F6BB9F /* GoogleService-Info-3.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */; };
+		AD6EE56129F2A131008F6824 /* PayWallHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EE56029F2A131008F6824 /* PayWallHeaderView.swift */; };
+		AD6EE56329F2A2D2008F6824 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EE56229F2A2D2008F6824 /* Extensions.swift */; };
+		AD6EE56529F2B0B9008F6824 /* PayWallDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EE56429F2B0B9008F6824 /* PayWallDescriptionView.swift */; };
+		ADEAB54929F01FA500F6BB9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ADEAB54829F01FA400F6BB9F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,9 @@
 		AD12C84729ED676D0060AAA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD12C84A29ED676D0060AAA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD12C84C29ED676D0060AAA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD42C56029F13AEC0009CB54 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AD42C56229F13AFF0009CB54 /* BlogPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPost.swift; sourceTree = "<group>"; };
+		AD42C56429F187390009CB54 /* PayWallViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallViewController.swift; sourceTree = "<group>"; };
 		AD638FEE29ED707F00DEBEFC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD638FF129ED712800DEBEFC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AD638FF329ED714E00DEBEFC /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -47,7 +56,10 @@
 		AD638FFD29ED721C00DEBEFC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		AD638FFF29ED722A00DEBEFC /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		AD63900129ED724100DEBEFC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info-3.plist"; sourceTree = "<group>"; };
+		AD6EE56029F2A131008F6824 /* PayWallHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallHeaderView.swift; sourceTree = "<group>"; };
+		AD6EE56229F2A2D2008F6824 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		AD6EE56429F2B0B9008F6824 /* PayWallDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallDescriptionView.swift; sourceTree = "<group>"; };
+		ADEAB54829F01FA400F6BB9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +106,9 @@
 			children = (
 				AD638FED29ED703700DEBEFC /* Managers */,
 				AD638FEC29ED702F00DEBEFC /* Others */,
-				AD638FEB29ED702200DEBEFC /* Controllers */,
-				AD638FEA29ED701900DEBEFC /* Views */,
 				AD638FE929ED701300DEBEFC /* Models */,
+				AD638FEA29ED701900DEBEFC /* Views */,
+				AD638FEB29ED702200DEBEFC /* Controllers */,
 				AD12C84C29ED676D0060AAA4 /* Info.plist */,
 			);
 			path = BloggingApp;
@@ -133,6 +145,8 @@
 		AD638FE929ED701300DEBEFC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				AD42C56029F13AEC0009CB54 /* User.swift */,
+				AD42C56229F13AFF0009CB54 /* BlogPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				AD12C84929ED676D0060AAA4 /* LaunchScreen.storyboard */,
+				AD6EE56029F2A131008F6824 /* PayWallHeaderView.swift */,
+				AD6EE56429F2B0B9008F6824 /* PayWallDescriptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -158,10 +174,12 @@
 		AD638FEC29ED702F00DEBEFC /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				AD12C84729ED676D0060AAA4 /* Assets.xcassets */,
+				ADEAB54829F01FA400F6BB9F /* GoogleService-Info.plist */,
+				AD42C56429F187390009CB54 /* PayWallViewController.swift */,
 				AD12C83E29ED676C0060AAA4 /* AppDelegate.swift */,
 				AD12C84029ED676C0060AAA4 /* SceneDelegate.swift */,
-				ADEAB54829F01FA400F6BB9F /* GoogleService-Info-3.plist */,
-				AD12C84729ED676D0060AAA4 /* Assets.xcassets */,
+				AD6EE56229F2A2D2008F6824 /* Extensions.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -246,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD12C84B29ED676D0060AAA4 /* LaunchScreen.storyboard in Resources */,
-				ADEAB54929F01FA500F6BB9F /* GoogleService-Info-3.plist in Resources */,
+				ADEAB54929F01FA500F6BB9F /* GoogleService-Info.plist in Resources */,
 				AD12C84829ED676D0060AAA4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,18 +319,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD638FF829ED718B00DEBEFC /* ViewPostViewController.swift in Sources */,
+				AD6EE56529F2B0B9008F6824 /* PayWallDescriptionView.swift in Sources */,
+				AD6EE56329F2A2D2008F6824 /* Extensions.swift in Sources */,
 				AD63900029ED722A00DEBEFC /* AuthManager.swift in Sources */,
 				AD638FFE29ED721C00DEBEFC /* DatabaseManager.swift in Sources */,
 				AD12C84329ED676C0060AAA4 /* HomeViewController.swift in Sources */,
 				AD638FF629ED717400DEBEFC /* SignUpViewController.swift in Sources */,
+				AD6EE56129F2A131008F6824 /* PayWallHeaderView.swift in Sources */,
 				AD12C83F29ED676C0060AAA4 /* AppDelegate.swift in Sources */,
+				AD42C56129F13AEC0009CB54 /* User.swift in Sources */,
 				AD638FF429ED714E00DEBEFC /* SignInViewController.swift in Sources */,
 				AD638FFA29ED71C200DEBEFC /* CreateNewPostViewController.swift in Sources */,
 				AD638FFC29ED720000DEBEFC /* IAPManager.swift in Sources */,
+				AD42C56329F13AFF0009CB54 /* BlogPost.swift in Sources */,
 				AD638FEF29ED707F00DEBEFC /* ProfileViewController.swift in Sources */,
 				AD638FF229ED712800DEBEFC /* TabBarViewController.swift in Sources */,
 				AD12C84129ED676C0060AAA4 /* SceneDelegate.swift in Sources */,
 				AD63900229ED724100DEBEFC /* StorageManager.swift in Sources */,
+				AD42C56529F187390009CB54 /* PayWallViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
