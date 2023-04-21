@@ -72,11 +72,17 @@ class PayWallViewController: UIViewController {
     }
     
     @objc func didTapSubscribe() {
-        
+        let alert = UIAlertController(title: "An Error Occured!", message: "Something went wrong, try again later.", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Dismiss", style: .cancel)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
     
     @objc func didTapRestore() {
-        
+        let alert = UIAlertController(title: "An Error Occured!", message: "Something went wrong, try again later.", preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Dismiss", style: .cancel)
+        alert.addAction(cancel)
+        present(alert, animated: true)
     }
     
     private func setUpCloseButton() {
