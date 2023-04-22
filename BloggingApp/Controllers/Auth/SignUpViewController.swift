@@ -94,7 +94,7 @@ class SignUpViewController: UIViewController {
         
         AuthManager.shared.signUp(email: email, password: password) { [weak self] success in
             if success {
-                let newUser = User(name: name, email: email, profilePictuerURL: nil)
+                let newUser = User(name: name, email: email, profilePictuerRef: nil)
                 DatabaseManager.shared.insert(user: newUser) { inserted in
                     guard inserted else {
                         return

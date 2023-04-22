@@ -44,4 +44,24 @@ final class DatabaseManager {
                 comlpetion(error == nil)
             }
     }
+    
+    public func getUser(email: String, completion: @escaping (User?) -> Void) {
+        let documentID = email
+            .replacingOccurrences(of: ".", with: "_")
+            .replacingOccurrences(of: "@", with: "_")
+        
+        database
+            .collection("users")
+            .document(documentID)
+            .getDocument { snapshot, error in
+                guard let data = snapshot?.data() as? [String: String], error == nil,
+                let name = data["name"]  else {
+                    return
+                }
+                
+                let ref = data["profile_photo"]
+                let user = User(name: name, email: email, profilePictuerRef: ref)
+                completion(user)
+            }
+    }
 }
