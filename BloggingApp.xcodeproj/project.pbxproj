@@ -192,8 +192,8 @@
 			children = (
 				AD638FFB29ED720000DEBEFC /* IAPManager.swift */,
 				AD638FFD29ED721C00DEBEFC /* DatabaseManager.swift */,
-				AD638FFF29ED722A00DEBEFC /* AuthManager.swift */,
 				AD63900129ED724100DEBEFC /* StorageManager.swift */,
+				AD638FFF29ED722A00DEBEFC /* AuthManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";

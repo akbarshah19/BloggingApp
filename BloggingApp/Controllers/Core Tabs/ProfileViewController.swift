@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var user: User?
     let currentEmail: String
@@ -62,6 +62,8 @@ class ProfileViewController: UIViewController {
                                     y: (headerView.height - (headerView.width/4))/2.5,
                                     width: view.width/4,
                                     height: view.width/4)
+        profilePhoto.layer.masksToBounds = true
+        profilePhoto.layer.cornerRadius = profilePhoto.width/2
         headerView.addSubview(profilePhoto)
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProfilePhoto))
         profilePhoto.addGestureRecognizer(tap)
@@ -78,7 +80,21 @@ class ProfileViewController: UIViewController {
         }
         
         if let ref = profilePhotoRef {
-            
+            //Fetch photo
+            StorageManager.shared.dowloadUrlForProfilePicture(path: ref) { url in
+                guard let url = url else {
+                    return
+                }
+                let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+                    guard let data = data else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        profilePhoto.image = UIImage(data: data)
+                    }
+                }
+                task.resume()
+            }
         }
     }
     
@@ -102,7 +118,39 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func didTapProfilePhoto() {
+        guard let myEmail = UserDefaults.standard.string(forKey: "email"), myEmail == currentEmail else {
+            return
+        }
         
+        let picker = UIImagePickerController()
+        picker.sourceType = .photoLibrary
+        picker.delegate = self
+        picker.allowsEditing = true
+        present(picker, animated: true)
+    }
+    
+    //TableView
+    private var posts: [BlogPost] = []
+    private func fetchPosts() {
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "Hello world!"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = ViewPostViewController()
+        vc.title = posts[indexPath.row].title
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func didTapSignOut() {
@@ -128,14 +176,29 @@ class ProfileViewController: UIViewController {
     }
 }
 
-extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+extension ProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hello world!"
-        return cell
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true)
+        guard let image = info[.editedImage] as? UIImage else {
+            return
+        }
+        
+        StorageManager.shared.uploadUserProfilePicture(email: currentEmail, image: image) { [weak self] success in
+            guard let strongSelf = self else { return }
+            if success {
+                DatabaseManager.shared.updateProfilePhoto(email: strongSelf.currentEmail) { updated in
+                    guard updated else {
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        strongSelf.fetchProfileData()
+                    }
+                }
+            }
+        }
     }
 }
