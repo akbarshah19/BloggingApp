@@ -58,17 +58,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         profilePhoto.tintColor = .white
         profilePhoto.isUserInteractionEnabled = true
         profilePhoto.contentMode = .scaleAspectFit
-        profilePhoto.frame = CGRect(x: (view.width - (view.width/4))/2,
+        profilePhoto.frame = CGRect(x: (headerView.width - (headerView.width/4))/2,
                                     y: (headerView.height - (headerView.width/4))/2.5,
-                                    width: view.width/4,
-                                    height: view.width/4)
+                                    width: headerView.width/4,
+                                    height: headerView.width/4)
         profilePhoto.layer.masksToBounds = true
         profilePhoto.layer.cornerRadius = profilePhoto.width/2
         headerView.addSubview(profilePhoto)
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapProfilePhoto))
         profilePhoto.addGestureRecognizer(tap)
         
-        let emailLabel = UILabel(frame: CGRect(x: 20, y: profilePhoto.bottom + 10, width: view.width - 40, height: 30))
+        let emailLabel = UILabel(frame: CGRect(x: 20, y: profilePhoto.bottom + 10, width: headerView.width - 40, height: 30))
         emailLabel.text = currentEmail
         emailLabel.textAlignment = .center
         emailLabel.textColor = .white
