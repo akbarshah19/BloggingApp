@@ -61,10 +61,10 @@ final class DatabaseManager {
                     guard let id = dictionary["id"] as? String,
                           let title = dictionary["title"] as? String,
                           let body = dictionary["body"] as? String,
-                          let created = dictionary ["created"] as? TimeInterval,
-                          let imageUrlString = dictionary["headerImageUrl"] as? String else {
-                              print("Invalid post fetch conversion.")
-                              return nil
+                          let created = dictionary ["date_created"] as? TimeInterval,
+                          let imageUrlString = dictionary["header"] as? String else {
+                        print("Invalid post fetch conversion.")
+                        return nil
                     }
                     
                     let post = BlogPost(identifier: id,
