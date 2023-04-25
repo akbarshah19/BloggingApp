@@ -82,9 +82,9 @@ class ViewPostViewController: UIViewController, UITableViewDelegate, UITableView
         let index = indexPath.row
         switch index {
         case 0:
-            return 70
+            return UITableView.automaticDimension
         case 1:
-            return 150
+            return UITableView.automaticDimension //150
         case 2:
             return UITableView.automaticDimension
         default:
