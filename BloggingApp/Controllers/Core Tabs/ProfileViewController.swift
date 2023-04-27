@@ -160,6 +160,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         var isOwnedBuCurrentUser = false
+        HapticsManager.shared.vibrateForSelection()
+
         if let email = UserDefaults.standard.string(forKey: "email") {
             isOwnedBuCurrentUser = email == currentEmail
         }

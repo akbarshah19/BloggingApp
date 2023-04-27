@@ -92,6 +92,8 @@ class SignUpViewController: UIViewController {
             return
         }
         
+        HapticsManager.shared.vibrateForSelection()
+        
         AuthManager.shared.signUp(email: email, password: password) { [weak self] success in
             if success {
                 let newUser = User(name: name, email: email, profilePictuerRef: nil)

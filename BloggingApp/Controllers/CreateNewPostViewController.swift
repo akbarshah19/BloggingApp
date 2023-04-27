@@ -101,12 +101,16 @@ class CreateNewPostViewController: UIViewController {
                 )
                 DatabaseManager.shared.insert(with: post, email: email) { [weak self] posted in
                     guard posted else {
-                        print("Failed to post new blog aritcle. ")
+                        DispatchQueue.main.async {
+                            HapticsManager.shared.vibrate(for: .error)
+                            print("Failed to post new blog aritcle.")
+                        }
                         return
                     }
                     
                     DispatchQueue.main.async {
-                        
+                        HapticsManager.shared.vibrate(for: .success)
+                        self?.didTapCancel()
                     }
                 }
             }

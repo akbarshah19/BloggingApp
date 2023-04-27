@@ -9,18 +9,37 @@ import Foundation
 
 final class IAPManager {
     static let shared = IAPManager()
-    private var postEligibleViewDate: Date?
+    static let formatter = ISO8601DateFormatter()
+    private var postEligibleViewDate: Date? {
+        get {
+            guard let string = UserDefaults.standard.string(forKey: "postEligibleViewDate") else {
+                return nil
+            }
+            return IAPManager.formatter.date(from: string)
+        }
+        set {
+            guard let date = newValue  else {
+                return
+            }
+            let string = IAPManager.formatter.string(from: date)
+            UserDefaults.standard.set(string, forKey: "postEligibleViewDate")
+        }
+    }
     
     private init() {}
     
     func isPremium() -> Bool {
-        return false
+        return UserDefaults.standard.bool(forKey: "premium")
     }
     
     func subscribe() {}
     func restorePurchases() {}
     
     var canViewPost: Bool {
+//        if isPremium() {
+//            return true
+//        }
+        
         guard let date = postEligibleViewDate else {
             return true
         }

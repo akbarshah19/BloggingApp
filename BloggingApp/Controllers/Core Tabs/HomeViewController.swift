@@ -81,6 +81,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        HapticsManager.shared.vibrateForSelection()
+
         guard IAPManager.shared.canViewPost else {
             let vc = PayWallViewController()
             present(vc, animated: true)
