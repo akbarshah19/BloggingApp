@@ -159,10 +159,27 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = ViewPostViewController(post: posts[indexPath.row])
-        vc.navigationItem.largeTitleDisplayMode = .never
-        vc.title = "Post"
-        navigationController?.pushViewController(vc, animated: true)
+        var isOwnedBuCurrentUser = false
+        if let email = UserDefaults.standard.string(forKey: "email") {
+            isOwnedBuCurrentUser = email == currentEmail
+        }
+        
+        if !isOwnedBuCurrentUser {
+            if IAPManager.shared.canViewPost {
+                let vc = ViewPostViewController(post: posts[indexPath.row], isOwnedBuCurrentUser: isOwnedBuCurrentUser)
+                vc.navigationItem.largeTitleDisplayMode = .never
+                vc.title = "Post"
+                navigationController?.pushViewController(vc, animated: true)
+            } else {
+                let vc = PayWallViewController()
+                present(vc, animated: true)
+            }
+        } else {
+            let vc = ViewPostViewController(post: posts[indexPath.row], isOwnedBuCurrentUser: isOwnedBuCurrentUser)
+            vc.navigationItem.largeTitleDisplayMode = .never
+            vc.title = "Post"
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

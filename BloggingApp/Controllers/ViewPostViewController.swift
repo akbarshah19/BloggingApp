@@ -10,9 +10,11 @@ import UIKit
 class ViewPostViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     private var post: BlogPost
+    private var isOwnedBuCurrentUser: Bool
     
-    init(post: BlogPost) {
+    init(post: BlogPost, isOwnedBuCurrentUser: Bool = false) {
         self.post = post
+        self.isOwnedBuCurrentUser = isOwnedBuCurrentUser
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,6 +36,9 @@ class ViewPostViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
+        if !isOwnedBuCurrentUser {
+            IAPManager.shared.logPostViewed()
+        }
     }
     
     override func viewDidLayoutSubviews() {
